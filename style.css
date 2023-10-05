@@ -8,3 +8,52 @@ header {
     color: navy
 }
 
+h1 {
+    text-align: center;
+    color: #FF5722;
+}
+
+h2{ 
+    text-align: center;
+    color: Green;
+}
+
+h3 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #FF5722;
+}
+
+p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: #FF5722;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #FF5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #D84315;
+}
