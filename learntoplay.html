@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play Magic: The Gathering</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #FF5722;
+        }
+        p {
+            text-align: justify;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #FF5722;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #D84315;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Play Magic: The Gathering</h1>
+
+    <p>Magic: The Gathering is a complex and strategic collectible card game. Here are the basic steps to get started:</p>
+
+    <ol>
+        <li>Shuffle your deck of cards.</li>
+        <li>Draw 7 cards as your starting hand.</li>
+        <li>Decide who goes first (usually done by a coin flip).</li>
+        <li>Start your turn:</li>
+    </ol>
+
+    <button onclick="toggleVisibility('step1')">Step 1</button>
+    <button onclick="toggleVisibility('step2')">Step 2</button>
+    <button onclick="toggleVisibility('step3')">Step 3</button>
+    <button onclick="toggleVisibility('step4')">Step 4</button>
+
+    <p id="step1" class="hidden">Step 1: Shuffle your deck thoroughly to ensure a random distribution of cards.</p>
+    <p id="step2" class="hidden">Step 2: Draw 7 cards from your shuffled deck. This forms your starting hand.</p>
+    <p id="step3" class="hidden">Step 3: Decide who goes first, often done by a coin flip or mutual agreement.</p>
+    <p id="step4" class="hidden">Step 4: Begin your turn by untapping your permanents (if any), drawing a card, and then proceeding to your main phase where you can play land cards and cast spells.</p>
+
+    <p>These are just the very basics of how to play Magic. The game involves many more rules, card types, and strategies. To learn more, you can refer to the <a href="https://magic.wizards.com/en/howtoplay" target="_blank">official Magic: The Gathering "How to Play" guide</a>.</p>
+
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
