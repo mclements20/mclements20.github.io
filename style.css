@@ -53,5 +53,7 @@ a:visited {
   }
 
   img {
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
