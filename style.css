@@ -47,3 +47,7 @@ a:visited {
   tr {
     background-color: white;
   }
+  
+  section {
+    text-align: center;
+  }
