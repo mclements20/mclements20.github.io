@@ -12,64 +12,14 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        div {
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <h1>Magic: The Gathering Formats</h1>
     <img src="images/Untitled.jpeg" alt="farwell" style="float:center; width:150px; height:150px;">
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Format</th>
-                <th>Number of Players Online</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Standard</td>
-                <td id="standardCount">0</td>
-            </tr>
-            <tr>
-                <td>Modern</td>
-                <td id="modernCount">0</td>
-            </tr>
-            <tr>
-                <td>Legacy</td>
-                <td id="legacyCount">0</td>
-            </tr>
-            <tr>
-                <td>Commander</td>
-                <td id="commanderCount">0</td>
-            </tr>
-            <tr>
-                <td>Pioneer</td>
-                <td id="pioneerCount">0</td>
-            </tr>
-            <!-- Add more rows for other formats -->
-        </tbody>
-    </table>
-
-    <script>
-        
-
-        const playerCounts = {
-            standard: "70%",
-            modern: "20%",
-            legacy: "15%",
-            commander: "15%",
-            pioneer: "< 5%",
-            // Add more formats and player counts as needed
-        };
-
-        // Update the table cell values with player counts
-        Object.keys(playerCounts).forEach(format => {
-            const cell = document.getElementById(`${format}Count`);
-            if (cell) {
-                cell.textContent = playerCounts[format];
-            }
-        });
-    </script>
 
     <p>Magic: The Gathering offers a wide variety of formats to cater to different playstyles and preferences. Here's an introduction to some of the major formats:</p>
 
@@ -112,6 +62,59 @@
         </li>
         
     </ul>
+    <div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Format</th>
+                <th>Number of Players Online</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Standard</td>
+                <td id="standardCount">0</td>
+            </tr>
+            <tr>
+                <td>Modern</td>
+                <td id="modernCount">0</td>
+            </tr>
+            <tr>
+                <td>Legacy</td>
+                <td id="legacyCount">0</td>
+            </tr>
+            <tr>
+                <td>Commander</td>
+                <td id="commanderCount">0</td>
+            </tr>
+            <tr>
+                <td>Pioneer</td>
+                <td id="pioneerCount">0</td>
+            </tr>
+            <!-- Add more rows for other formats -->
+        </tbody>
+    </table>
+    </div>
+    <script>
+    
+
+        const playerCounts = {
+            standard: "70%",
+            modern: "20%",
+            legacy: "15%",
+            commander: "15%",
+            pioneer: "< 5%",
+            // Add more formats and player counts as needed
+        };
+
+        // Update the table cell values with player counts
+        Object.keys(playerCounts).forEach(format => {
+            const cell = document.getElementById(`${format}Count`);
+            if (cell) {
+                cell.textContent = playerCounts[format];
+            }
+        });
+    </script>
 
     <p>These are just a few of the formats available in Magic: The Gathering. Each format has its own unique rules, banned/restricted lists, and strategies. To learn more about these formats and explore others, visit the <a href="https://magic.wizards.com/en/game-info/gameplay/rules-and-formats/formats" target="_blank">official Magic: The Gathering formats page</a>.</p>
 
