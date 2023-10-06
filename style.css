@@ -51,3 +51,7 @@ a:visited {
   section {
     text-align: center;
   }
+
+  img {
+    align-items: center;
+  }
