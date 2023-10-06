@@ -23,7 +23,6 @@ p {
 }
 
 ul {
-    list-style-typecolor: coral;;
     padding: 0;
 }
 
@@ -47,4 +46,12 @@ a:visited {
     padding: 10px;
     margin: auto;
     background-color: white;
+  }
+
+  table {
+    border-color: red;
+  }
+  
+  tr {
+    background-color: yellow;
   }
