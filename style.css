@@ -50,10 +50,5 @@ a:visited {
   
   section {
     text-align: center;
-  }
-
-  img {
     display: flex;
-    justify-content: center;
-    align-content: center;
   }
