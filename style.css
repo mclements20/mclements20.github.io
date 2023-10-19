@@ -71,43 +71,33 @@ section {
   justify-content: center; /* Center content vertically */
 }
 
+/* Sidebar and Widget Styles */
 .sidebar {
-  margin-left: 20px; /* Adjust the margin for a different layout */
-  position: relative; /* Change to relative position for content flow */
-  padding: 20px; /* Increase padding for a more spacious look */
-  background-color: #333; /* Change to a dark background color */
-  color: #FFF; /* Change text color to white */
+  background-color: #4A90E2;
+  color: #fff;
+  padding: 20px;
+  width: 260px;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar .wrapper {
-  font: 12px 'Roboto', sans-serif; /* Change font and increase font size */
-  background: #4A90E2; /* Change to a unique background color */
+  background: #FFF;
   padding: 20px;
-  width: 200px; /* Adjust the width for a more balanced look */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
 }
 
-.sidebar h3.select {
-  background: #E74C3C; /* Match h3 color for consistency */
-  margin: 10px 0 15px 0; /* Adjust margins for better spacing */
-  padding: 10px; /* Add padding for a button-like appearance */
-  font-size: 1.2em; /* Increase font size */
-  text-align: center; /* Center-align text */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
-  transition: background 0.3s, color 0.3s; /* Smooth transitions */
-}
-
-.sidebar h3.select:hover {
-  background: #FF5722; /* Change to a unique color on hover */
-  color: #FFF; /* Change text color on hover */
-}
-
+/* Style the h3 elements with unique colors and a slight gradient */
+.sidebar h3.select,
 .sidebar h3.archives,
 .sidebar h3.resources {
-  /* Apply similar styles as h3.select */
-  background: #E74C3C;
-  margin: 15px 0 10px 0;
+  background: linear-gradient(to right, #FF5722, #E74C3C);
+  color: #fff;
   padding: 10px;
+  margin: 10px 0;
   font-size: 1.2em;
   text-align: center;
   border-radius: 5px;
@@ -115,38 +105,49 @@ section {
   transition: background 0.3s, color 0.3s;
 }
 
+/* Add a hover effect to h3 elements */
+.sidebar h3.select:hover,
 .sidebar h3.archives:hover,
 .sidebar h3.resources:hover {
-  background: #27AE60; /* Change to a unique color on hover */
-  color: #FFF; /* Change text color on hover */
+  background: linear-gradient(to right, #E74C3C, #FF5722);
 }
 
+/* Style the unordered list with custom bullets and a light background */
 .sidebar ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; /* Remove list-style-type to style list items */
+  list-style: none;
+  padding-left: 0;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .sidebar li {
   margin: 0;
-  padding: 0;
-  font-size: 1.1em; /* Increase font size for readability */
+  padding: 10px 15px;
+  font-size: 1.1em;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s;
 }
 
-.sidebar li a:link,
-.sidebar li a:visited {
-  color: #3498DB; /* Match the link color used in the main content */
+/* Add a subtle hover effect to list items */
+.sidebar li:hover {
+  background: #fff;
+}
+
+/* Style links within the sidebar */
+.sidebar a:link,
+.sidebar a:visited {
+  color: #4A90E2;
   text-decoration: none;
-  transition: color 0.3s; /* Smooth color transition */
+  transition: color 0.3s;
 }
 
-.sidebar li a:hover {
-  color: #FF5722; /* Change to a unique color on hover */
+/* Add a hover effect to links */
+.sidebar a:hover {
+  color: #FF5722;
 }
 
 .extra1 {
-  display: none; /* Hide the extra1 element by default */
+  display: none;
 }
-
-/* Add media queries for responsive design if needed */
 
