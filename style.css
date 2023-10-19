@@ -1,66 +1,77 @@
-
+/* Header Styles */
 header {
   text-align: center;
-  color: #4A90E2; /* Change to a unique color, e.g., a light blue */
+  background: linear-gradient(to right, #E95500, #FFB400); /* Unique gradient background */
+  color: #fff; /* White text color */
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif; /* Artistic font choice */
 }
 
 h1 {
   text-align: center;
-  color: #FF5722; /* Leave the color as it is */
-  font-size: 2.5em; /* Increase the font size for impact */
-}
-
-h2 { 
-  color: #27AE60; /* Change to a unique green color */
-  font-size: 1.8em; /* Increase the font size for emphasis */
-}
-
-h3 {
-  color: #E74C3C; /* Change to a unique red color */
-  font-size: 1.2em; /* Adjust the font size */
+  color: #FF5722;
+  font-size: 3em; /* Larger font size for impact */
   text-transform: uppercase; /* Uppercase for style */
 }
 
-p {
-  text-align: justify;
-  margin: 15px 0; /* Add more margin for spacing */
-  font-size: 1.1em; /* Slightly larger text */
-  color: #555; /* A softer black color */
+h2 {
+  color: #27AE60;
+  font-size: 1.8em;
 }
 
+h3 {
+  color: #E74C3C;
+  font-size: 1.4em; /* Slightly larger font size */
+  text-transform: uppercase;
+  font-weight: bold; /* Make it bold for emphasis */
+  text-shadow: 1px 1px 1px #555; /* Add a subtle text shadow */
+}
+
+/* Paragraph Styles */
+p {
+  text-align: justify;
+  margin: 20px 0; /* Increase margin for spacing */
+  font-size: 1.2em; /* Larger text */
+  line-height: 1.6; /* Wider line spacing for readability */
+  color: #333; /* Darker text color */
+}
+
+/* Link Styles */
 a {
-  color: #3498DB; /* Change to a unique blue color */
-  text-decoration: none; /* Remove the underline */
-  transition: color 0.3s; /* Add a smooth color transition on hover */
+  color: #3498DB;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #E74C3C; /* Change to a unique color on hover */
+  color: #E95500; /* Unique color on hover */
 }
 
 a:visited {
-  color: #9B59B6; /* Change to a unique purple color */
+  color: #9B59B6;
 }
 
+/* Box Styles */
 .box {
-  width: 250px; /* Increase the box width */
-  height: 150px; /* Increase the box height */
-  border: 2px solid #4A90E2; /* Match the header color for border */
+  width: 300px; /* Increase the box width */
+  height: 180px; /* Increase the box height */
+  border: 2px solid #FFB400; /* Match the header background color for border */
   padding: 20px;
-  margin: 20px auto; /* Add more margin for centering */
-  background-color: #F5F5F5; /* A light gray background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  margin: 20px auto;
+  background: linear-gradient(to right, #fff, #f0f0f0); /* Subtle gradient background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+  border-radius: 10px; /* Rounded corners for an artistic touch */
 }
 
 table {
-  border-color: #E74C3C; /* Match the h3 color for table border */
-  width: 100%; /* Make the table width 100% */
-  border-collapse: collapse; /* Collapse table borders */
+  border-color: #E74C3C;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 tr {
-  background-color: #ECF0F1; /* A light background for table rows */
-  color: #333; /* Dark text for table rows */
+  background-color: #F9F9F9; /* Light background for table rows */
+  color: #333;
 }
 
 section {
