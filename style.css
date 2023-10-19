@@ -2,17 +2,23 @@
 header {
   text-align: center;
   background: linear-gradient(to right, #E95500, #FFB400); /* Unique gradient background */
-  color: #fff; /* White text color */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Make text transparent */
   padding: 20px;
   font-family: 'Montserrat', sans-serif; /* Artistic font choice */
 }
 
 h1 {
   text-align: center;
-  color: #FF5722;
+  background: linear-gradient(to right, #FF5722, #FFB400, #27AE60, #E74C3C, #3498DB, #9B59B6, #555); /* Rainbow gradient background */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Make text transparent */
   font-size: 3em; /* Larger font size for impact */
   text-transform: uppercase; /* Uppercase for style */
 }
+
 
 h2 {
   color: #27AE60;
