@@ -69,10 +69,10 @@ a:visited {
 .box {
   width: 300px; /* Increase the box width */
   height: 180px; /* Increase the box height */
-  border: 2px solid #FFB400; /* Match the header background color for border */
+  border: 2px solid #4f4f4e; /* Match the header background color for border */
   padding: 20px;
   margin: 20px auto;
-  background: linear-gradient(to right, #fff, #f0f0f0); /* Subtle gradient background */
+  background: linear-gradient(to right, #fff, #d1a4a4); /* Subtle gradient background */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
   border-radius: 10px; /* Rounded corners for an artistic touch */
 }
@@ -98,7 +98,7 @@ section {
 
 /* Sidebar Styles */
 .sidebar {
-  background: #4A90E2; /* Unique sidebar background */
+  background: #2a2b2b; /* Unique sidebar background */
   color: #fff;
   padding: 20px;
   width: 260px;
@@ -108,7 +108,7 @@ section {
 
 /* Sidebar Widget Styles */
 .sidebar .wrapper {
-  background: #FFB400; /* Bright yellow background */
+  background: #0f1025; /* Bright yellow background */
   padding: 20px;
   border-radius: 10px; /* Rounded corners for the widget */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -118,7 +118,7 @@ section {
 
 /* Sidebar H3 Styles */
 .sidebar h3 {
-  background: #E74C3C; /* Red background for h3 */
+  background: #6c4a47; /* Red background for h3 */
   padding: 10px;
   font-size: 1.3em; /* Larger font size */
   text-align: center;
@@ -129,7 +129,7 @@ section {
 
 /* Add a hover effect to h3 elements */
 .sidebar h3:hover {
-  background: #FF5722; /* Unique color on hover */
+  background: #cfc9c7; /* Unique color on hover */
 }
 
 /* Sidebar List Styles */
