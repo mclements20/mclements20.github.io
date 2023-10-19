@@ -72,75 +72,81 @@ section {
 }
 
 .sidebar {
-  margin-left: 600px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin-left: 20px; /* Adjust the margin for a different layout */
+  position: relative; /* Change to relative position for content flow */
+  padding: 20px; /* Increase padding for a more spacious look */
+  background-color: #333; /* Change to a dark background color */
+  color: #FFF; /* Change text color to white */
 }
+
 .sidebar .wrapper {
-  font: 10px verdana, sans-serif;
-  background: transparent url(http://csszengarden.com/001/paper-bg.jpg) top left repeat-y;
-  padding: 10px;
-  margin-top: 150px;
-  width: 130px;
+  font: 12px 'Roboto', sans-serif; /* Change font and increase font size */
+  background: #4A90E2; /* Change to a unique background color */
+  padding: 20px;
+  width: 200px; /* Adjust the width for a more balanced look */
 }
+
 .sidebar h3.select {
-  background: transparent url(http://csszengarden.com/001/h3.gif) no-repeat top left;
-  margin: 10px 0 5px 0;
-  width: 97px;
-  height: 16px;
-
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+  background: #E74C3C; /* Match h3 color for consistency */
+  margin: 10px 0 15px 0; /* Adjust margins for better spacing */
+  padding: 10px; /* Add padding for a button-like appearance */
+  font-size: 1.2em; /* Increase font size */
+  text-align: center; /* Center-align text */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  transition: background 0.3s, color 0.3s; /* Smooth transitions */
 }
-.sidebar h3.archives {
-  background: transparent url(http://csszengarden.com/001/h5.gif) no-repeat top left;
-  margin: 25px 0 5px 0;
-  width:57px;
-  height: 14px;
 
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+.sidebar h3.select:hover {
+  background: #FF5722; /* Change to a unique color on hover */
+  color: #FFF; /* Change text color on hover */
 }
+
+.sidebar h3.archives,
 .sidebar h3.resources {
-  background: transparent url(http://csszengarden.com/001/h6.gif) no-repeat top left;
-  margin: 25px 0 5px 0;
-  width:63px;
-  height: 10px;
-
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+  /* Apply similar styles as h3.select */
+  background: #E74C3C;
+  margin: 15px 0 10px 0;
+  padding: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
+.sidebar h3.archives:hover,
+.sidebar h3.resources:hover {
+  background: #27AE60; /* Change to a unique color on hover */
+  color: #FFF; /* Change text color on hover */
+}
 
 .sidebar ul {
   margin: 0;
   padding: 0;
-}
-.sidebar li {
-  line-height: 1.3em;
-  background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center;
-  display: block;
-  padding-top: 5px;
-  margin-bottom: 5px;
-  list-style-type: none;
-}
-.sidebar li a:link {
-  color: #988F5E;
-}
-.sidebar li a:visited {
-  color: #B3AE94;
+  list-style: none; /* Remove list-style-type to style list items */
 }
 
+.sidebar li {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em; /* Increase font size for readability */
+}
+
+.sidebar li a:link,
+.sidebar li a:visited {
+  color: #3498DB; /* Match the link color used in the main content */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.sidebar li a:hover {
+  color: #FF5722; /* Change to a unique color on hover */
+}
 
 .extra1 {
-  background: transparent url(http://csszengarden.com/001/cr2.gif) top left no-repeat;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  width: 148px;
-  height: 110px;
+  display: none; /* Hide the extra1 element by default */
 }
+
+/* Add media queries for responsive design if needed */
+
