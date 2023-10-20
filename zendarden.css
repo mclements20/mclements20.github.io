@@ -169,23 +169,24 @@ section {
   background: #cfc9c7; /* Unique color on hover */
 }
   
-/* Sidebar List Styles */
 .sidebar ul {
   list-style: none;
   padding-left: 0;
   background-color: #0f1030;
   border-radius: 5px;
   margin-top: 10px;
+  display: flex; /* Set the display property to flex */
+  flex-wrap: wrap; /* Wrap list items to the next row if needed */
 }
 
 .sidebar li {
   margin-right: 10px;
   padding: 10px 15px;
-  font-size: 1.2em; /* Larger font size */
+  font-size: 1.2em;
   border-bottom: 1px solid #ddd;
   transition: background 0.3s;
-  display: inline;
 }
+
   
   /* Add a subtle hover effect to list items */
 .sidebar li:hover {
@@ -211,10 +212,10 @@ section {
 }
 
 .wave-text {
-  font-size: 12px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: linear-gradient(to right, blue, green, red,); /* Text color */
+  color: purple; /* Text color */
   text-transform: uppercase;
   animation: wave 2s linear infinite;
 }
@@ -227,7 +228,7 @@ section {
     text-shadow: 0 -5px 5px #b4d3e8, 5px -5px 5px #6b92ad;
   }
   50% {
-    text-shadow: 0 0 5px #0c3a5a;
+    text-shadow: 0 0 5px #4da8e9;
   }
   75% {
     text-shadow: 0 5px 5px #052f4d, -5px 5px 5px #0c3b5d;
