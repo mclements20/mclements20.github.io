@@ -1,0 +1,210 @@
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+  
+header {
+    background-image: url('header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+  
+header h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+  
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+  
+.social-icons li {
+    display: inline;
+    margin-right: 10px;
+}
+  
+.social-icons a {
+    color: #fff;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+  
+article h2 {
+    font-size: 2em;
+    color: #333;
+}
+  
+article p {
+    margin-bottom: 20px;
+    color: #555;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px #ddd;
+  }
+  
+img:hover {
+    opacity: 0.9;
+}
+
+blockquote {
+    background-color: #f5f5f5;
+    border-left: 3px solid #0077cc;
+    margin: 20px 0;
+    padding: 10px;
+    font-style: italic;
+    quotes: "\\201C" "\\201D";
+}
+  
+blockquote:before {
+    content: open-quote;
+    font-size: 1.5em;
+    color: #0077cc;
+    margin-right: 5px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+  
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-links li {
+    display: inline;
+    margin-right: 20px;
+}
+  
+
+
+/* Box Styles */
+.box {
+    width: 300px; /* Increase the box width */
+    height: 180px; /* Increase the box height */
+    border: 2px solid #4f4f4e; /* Match the header background color for border */
+    padding: 20px;
+    margin: 20px auto;
+    background: linear-gradient(to right, #fff, #d1a4a4); /* Subtle gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+    border-radius: 10px; /* Rounded corners for an artistic touch */
+  }
+  
+table {
+    border-color: #E74C3C;
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+tr {
+    background-color: #F9F9F9; /* Light background for table rows */
+    color: #333;
+}
+  
+section {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically in the section */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background: #2a2b2b; /* Unique sidebar background */
+    color: #fff;
+    padding: 20px;
+    width: 260px;
+    font-family: 'Alegreya', serif; /* Artistic font choice */
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Sidebar Widget Styles */
+  .sidebar .wrapper {
+    background: #0f1025; /* Bright yellow background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the widget */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em; /* Larger text */
+    font-family: 'Lora', serif; /* Artistic font choice */
+  }
+  
+  /* Sidebar H3 Styles */
+  .sidebar h3 {
+    background: #6c4a47; /* Red background for h3 */
+    padding: 10px;
+    font-size: 1.3em; /* Larger font size */
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Add a hover effect to h3 elements */
+  .sidebar h3:hover {
+    background: #cfc9c7; /* Unique color on hover */
+  }
+  
+  /* Sidebar List Styles */
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .sidebar li {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 1.2em; /* Larger font size */
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+  }
+  
+  /* Add a subtle hover effect to list items */
+  .sidebar li:hover {
+    background: #fff;
+  }
+  
+  /* Sidebar Link Styles */
+  .sidebar a:link,
+  .sidebar a:visited {
+    color: #3498DB;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  /* Add a hover effect to links */
+  .sidebar a:hover {
+    color: #E95500; /* Unique color on hover */
+  }
+  
+  /* Hide the extra1 element */
+  .extra1 {
+    display: none;
+  }
