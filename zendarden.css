@@ -104,15 +104,15 @@ footer {
 
 /* Box Styles */
 .box {
-    width: 300px; /* Increase the box width */
-    height: 180px; /* Increase the box height */
-    border: 2px solid #4f4f4e; /* Match the header background color for border */
-    padding: 20px;
-    margin: 20px auto;
-    background: linear-gradient(to right, #fff, #d1a4a4); /* Subtle gradient background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
-    border-radius: 10px; /* Rounded corners for an artistic touch */
-  }
+  width: 300px; /* Increase the box width */
+  height: 180px; /* Increase the box height */
+  border: 2px solid #4f4f4e; /* Match the header background color for border */
+  padding: 20px;
+  margin: 20px auto;
+  background: linear-gradient(to right,#4f3f44, #4f2f44); /* Subtle gradient background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+  border-radius: 10px; /* Rounded corners for an artistic touch */
+}
   
 table {
     border-color: #E74C3C;

@@ -22,7 +22,7 @@ h1 {
 
 h2 {
   color: #27AE60;
-  background: linear-gradient(to right, #FF5722, #FFB400, #27AE60, #E74C3C, #3498DB, #9B59B6, #555); /* Rainbow gradient background */
+  background: linear-gradient(to right, #FF5722, #3498DB, #9B59B6, #555); /* Rainbow gradient background */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent; /* Make text transparent */
@@ -31,7 +31,7 @@ h2 {
 
 h3 {
   color: #E74C3C;
-  background: linear-gradient(to right, #FF5722, #FFB400, #27AE60, #E74C3C, #3498DB, #9B59B6, #555); /* Rainbow gradient background */
+  background: linear-gradient(to right, #FFB400, #27AE60, #E74C3C); /* Rainbow gradient background */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent; /* Make text transparent */
@@ -72,7 +72,7 @@ a:visited {
   border: 2px solid #4f4f4e; /* Match the header background color for border */
   padding: 20px;
   margin: 20px auto;
-  background: linear-gradient(to right, #fff, #d1a4a4); /* Subtle gradient background */
+  background: linear-gradient(to right,#4f3f44, #4f2f44); /* Subtle gradient background */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
   border-radius: 10px; /* Rounded corners for an artistic touch */
 }
