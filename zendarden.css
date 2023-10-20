@@ -221,16 +221,16 @@ section {
   
   @keyframes wave {
     0% {
-      text-shadow: 0 0 5px #0077cc;
+      text-shadow: 0 0 5px #56aae6;
     }
     25% {
-      text-shadow: 0 -5px 5px #0077cc, 5px -5px 5px #0077cc;
+      text-shadow: 0 -5px 5px #b4d3e8, 5px -5px 5px #6b92ad;
     }
     50% {
-      text-shadow: 0 0 5px #0077cc;
+      text-shadow: 0 0 5px #0c3a5a;
     }
     75% {
-      text-shadow: 0 5px 5px #0077cc, -5px 5px 5px #0077cc;
+      text-shadow: 0 5px 5px #052f4d, -5px 5px 5px #0c3b5d;
     }
     100% {
       text-shadow: 0 0 5px #0077cc;
