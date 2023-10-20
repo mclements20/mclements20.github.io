@@ -1,12 +1,12 @@
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 16px;
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, #FF5722, #3498DB, #9B59B6, #555);
     color: #333;
 }
   
 header {
-    background-image: url('header-bg.jpg');
+    background-image: url('images/twees.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px 0;
@@ -35,7 +35,7 @@ header h1 {
 }
 
 article {
-    background-color: #fff;
+    background: linear-gradient(to right, #FFB400, #27AE60, #E74C3C);
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
