@@ -211,10 +211,10 @@ section {
   }
 
   .wave-text {
-    font-size: 48px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
-    color: #0077cc; /* Text color */
+    color: linear-gradient(to right, blue, green, red,); /* Text color */
     text-transform: uppercase;
     animation: wave 2s linear infinite;
   }
