@@ -155,7 +155,7 @@ section {
   
   /* Sidebar H3 Styles */
   .sidebar h3 {
-    background: #6c4a47; /* Red background for h3 */
+    background: #0f1020; /* Red background for h3 */
     padding: 10px;
     font-size: 1.3em; /* Larger font size */
     text-align: center;
@@ -173,7 +173,7 @@ section {
   .sidebar ul {
     list-style: none;
     padding-left: 0;
-    background-color: #f7f7f7;
+    background-color: #0f1030;
     border-radius: 5px;
     margin-top: 10px;
   }
