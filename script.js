@@ -47,6 +47,7 @@ $(document).ready(function() {
     let rocket = $('#rocket');
     let hintButton = $('#hint-btn');
     let revealedCount = 0;
+    let missedAttempts = [];
 
     // Function to animate rocket launch
     function launchRocket() {
@@ -68,7 +69,31 @@ $(document).ready(function() {
         if (codeIsCracked) {
             // Add rocket launch animation
             launchRocket();
+        } else {
+            // Add incorrect guess to missed attempts
+            missedAttempts.push(guess.join(' '));
+            updateMissedAttempts();
         }
+
+        // Update the guesses container
+        updateGuesses(guess);
+    }
+
+    // Function to update the guesses list on the page
+    function updateGuesses(guess) {
+        let guessList = $('#guess-list');
+        $('<li>').text(guess.join(' ')).appendTo(guessList);
+    }
+
+    // Function to update the missed attempts list on the page
+    function updateMissedAttempts() {
+        let missedList = $('#missed-list');
+        missedList.empty(); // Clear previous attempts
+
+        // Append new attempts to the list
+        missedAttempts.forEach(function(attempt) {
+            $('<li>').text(attempt).appendTo(missedList);
+        });
     }
 
     // Function to handle user input and update the page
@@ -99,4 +124,3 @@ $(document).ready(function() {
     // Attach click event to the hint button
     hintButton.click(revealHint);
 });
-
