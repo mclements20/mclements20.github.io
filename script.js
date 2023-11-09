@@ -43,16 +43,24 @@ $(document).ready(function () {
     function checkGuess(guess) {
         // Check if the input is valid (4 numbers)
         if (guess.length === 4 && guess.every(num => num >= 0 && num <= 9)) {
-            // Implementation of code checking logic (compare guess with the secretCode)
-            // Update the results dynamically on the page
+            // Implementation of code checking logic
+            let correctCount = 0;
 
-            // Check if the code is cracked
-            if (codeIsCracked) {
-                // Add rocket launch animation
+            for (let i = 0; i < 4; i++) {
+                if (guess[i] === secretCode[i]) {
+                    correctCount++;
+                }
+            }
+
+            if (correctCount === 4) {
+                // Code is cracked
                 launchRocket();
             } else {
                 // Add incorrect guess to missed attempts
-                missedAttempts.push(guess.join(' '));
+                missedAttempts.push({
+                    guess: guess.join(' '),
+                    correctCount: correctCount
+                });
                 updateMissedAttempts();
             }
 
@@ -76,7 +84,7 @@ $(document).ready(function () {
 
         // Append new attempts to the list
         missedAttempts.forEach(function (attempt) {
-            $('<li>').text(attempt).appendTo(missedList);
+            $('<li>').text(`Guess: ${attempt.guess}, Correct: ${attempt.correctCount}`).appendTo(missedList);
         });
     }
 
@@ -94,4 +102,25 @@ $(document).ready(function () {
 
             // Check if all numbers are revealed
             if (revealedCount === 4) {
-                alert('All numbers revealed. Game
+                alert('All numbers revealed. Game reset!');
+                // Add code to reset the game
+                resetGame();
+            }
+        }
+    }
+
+    // Function to reset the game
+    function resetGame() {
+        revealedCount = 0;
+        missedAttempts = [];
+        $('#guess-list').empty();
+        $('#missed-list').empty();
+        // You may also reset other game-related variables or UI elements here
+    }
+
+    // Attach click event to the submit button
+    $('#submit-btn').click(submitGuess);
+
+    // Attach click event to the hint button
+    hintButton.click(revealHint);
+});
