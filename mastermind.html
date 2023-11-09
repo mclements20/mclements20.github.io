@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Codebreaker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Space Codebreaker</h1>
+        <div id="codebreaker">
+            <label for="guess">Enter your guess:</label>
+            <input type="text" id="guess" maxlength="4" placeholder="Enter 4 colors">
+            <button onclick="submitGuess()">Submit Guess</button>
+        </div>
+        <div id="guesses-container">
+            <!-- Guesses and results will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
