@@ -12,12 +12,15 @@
         <div id="codebreaker">
             <label for="guess">Enter your guess:</label>
             <input type="text" id="guess" maxlength="4" placeholder="Enter 4 numbers">
-            <button onclick="submitGuess()">Submit Guess</button>
+            <button id="submit-btn">Submit Guess</button>
         </div>
         <div id="guesses-container">
             <!-- Guesses and results will be dynamically added here -->
         </div>
+        <img src="rocket.png" id="rocket" alt="Rocket" />
+        <button id="hint-btn">Hint</button>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>
