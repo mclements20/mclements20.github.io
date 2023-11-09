@@ -9,38 +9,37 @@ function toggleVisibility(id) {
 }
 
 
-
 // Initialize the secret code
 const secretCode = generateSecretCode();
 
 // Function to generate a random secret code
 function generateSecretCode() {
-    const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
     let code = [];
     for (let i = 0; i < 4; i++) {
-        const randomIndex = Math.floor(Math.random() * colors.length);
-        code.push(colors[randomIndex]);
+        code.push(Math.floor(Math.random() * 10)); // Use numbers instead of colors
     }
     return code;
 }
 
 // Function to check the guess and update the results
 function checkGuess(guess) {
-    // Implementation of code checking logic (compare guess with the secretCode)
-    // Update the results dynamically on the page
-    // Add animation if the code is cracked
+    // Convert the guess to an array of numbers
+    const guessNumbers = guess.map(Number);
+
+    // Check if the input is valid (4 numbers)
+    if (guessNumbers.length === 4 && guessNumbers.every(num => num >= 0 && num <= 9)) {
+        // Implementation of code checking logic (compare guessNumbers with the secretCode)
+        // Update the results dynamically on the page
+        // Add animation if the code is cracked
+    } else {
+        alert('Please enter 4 numbers between 0 and 9.');
+    }
 }
 
 // Function to handle user input and update the page
 function submitGuess() {
-    const guessInput = $('#guess').val().toLowerCase().split(' ');
-    
-    // Check if the input is valid (4 colors)
-    if (guessInput.length === 4) {
-        checkGuess(guessInput);
-    } else {
-        alert('Please enter 4 colors.');
-    }
+    const guessInput = $('#guess').val().split(' ').map(Number);
+    checkGuess(guessInput);
 }
 
 // Initial setup - add animation, etc.
