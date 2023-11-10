@@ -1,127 +1,98 @@
+// script.js
+let player1Score = 0;
+let player2Score = 0;
+let isTwoPlayerMode = false;
+let player1Turn = true;
+let player1Choice = '';
+let player2Choice = '';
 
-function toggleVisibility(id) {
-    let element = document.getElementById(id);
-    if (element.style.display === 'none' || element.style.display === '') {
-        element.style.display = 'block';
-    } else {
-        element.style.display = 'none';
-    }
+const modeSelect = document.getElementById('mode-select');
+const player1ScoreSpan = document.getElementById('player1-score');
+const player2ScoreSpan = document.getElementById('player2-score');
+const resultDiv = document.getElementById('result');
+const choicesButtons = document.querySelectorAll('.choice');
+
+modeSelect.addEventListener('change', function() {
+    isTwoPlayerMode = this.value === 'multi';
+    resetGame();
+});
+
+choicesButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        if (!isTwoPlayerMode) {
+            // Single player mode
+            playRound(this.id, getComputerChoice());
+        } else {
+            // Two player mode logic
+            if (player1Turn) {
+                player1Choice = this.id;
+                player1Turn = false;
+                resultDiv.innerText = 'Player 2: Make your choice';
+            } else {
+                player2Choice = this.id;
+                playRound(player1Choice, player2Choice);
+                player1Turn = true; // Reset for next round
+            }
+        }
+    });
+});
+
+document.getElementById('reset').addEventListener('click', resetGame);
+
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * 3)];
 }
 
+function playRound(player1Choice, player2Choice) {
+    const winner = getWinner(player1Choice, player2Choice);
+    updateScore(winner);
+    displayResult(player1Choice, player2Choice, winner);
+}
 
-// Initial setup - add animation, etc.
-$(document).ready(function () {
-    let rocket = $('#rocket');
-    let hintButton = $('#hint-btn');
-    let revealedCount = 0;
-    let missedAttempts = [];
-
-    // Function to animate rocket launch
-    function launchRocket() {
-        rocket.animate({
-            marginTop: '-500px',
-            opacity: '0'
-        }, 2000, function () {
-            // Reset rocket position after animation
-            rocket.css({ marginTop: '0', opacity: '1' });
-        });
+function getWinner(player1Choice, player2Choice) {
+    if (player1Choice === player2Choice) {
+        return 'draw';
     }
 
-    // Function to generate a random secret code
-    function generateSecretCode() {
-        let code = [];
-        for (let i = 0; i < 4; i++) {
-            code.push(Math.floor(Math.random() * 10));
-        }
-        return code;
+    if ((player1Choice === 'rock' && player2Choice === 'scissors') ||
+        (player1Choice === 'scissors' && player2Choice === 'paper') ||
+        (player1Choice === 'paper' && player2Choice === 'rock')) {
+        return 'player1';
     }
 
-    // Initialize the secret code
-    const secretCode = generateSecretCode();
+    return 'player2';
+}
 
-    // Function to check the guess and update the results
-    function checkGuess(guess) {
-        // Check if the input is valid (4 numbers)
-        if (guess.length === 4 && guess.every(num => num >= 0 && num <= 9)) {
-            // Implementation of code checking logic
-            let correctCount = 0;
-
-            for (let i = 0; i < 4; i++) {
-                if (guess[i] === secretCode[i]) {
-                    correctCount++;
-                }
-            }
-
-            if (correctCount === 4) {
-                // Code is cracked
-                launchRocket();
-            } else {
-                // Add incorrect guess to missed attempts
-                missedAttempts.push({
-                    guess: guess.join(' '),
-                    correctCount: correctCount
-                });
-                updateMissedAttempts();
-            }
-
-            // Update the guesses container
-            updateGuesses(guess);
-        } else {
-            alert('Please enter 4 numbers between 0 and 9.');
-        }
+function updateScore(winner) {
+    if (winner === 'player1') {
+        player1Score++;
+        player1ScoreSpan.innerText = player1Score;
+    } else if (winner === 'player2') {
+        player2Score++;
+        player2ScoreSpan.innerText = player2Score;
     }
+    // No score update for a draw
+}
 
-    // Function to update the guesses list on the page
-    function updateGuesses(guess) {
-        let guessList = $('#guess-list');
-        $('<li>').text(guess.join(' ')).appendTo(guessList);
+function displayResult(player1Choice, player2Choice, winner) {
+    let resultMessage;
+    if (winner === 'draw') {
+        resultMessage = `Both chose ${player1Choice}. It's a draw!`;
+    } else {
+        let winnerText = winner === 'player1' ? 'Player 1' : 'Player 2';
+        resultMessage = `Player 1 chose ${player1Choice}. Player 2 chose ${player2Choice}. ${winnerText} wins!`;
     }
+    resultDiv.innerText = resultMessage;
+}
 
-    // Function to update the missed attempts list on the page
-    function updateMissedAttempts() {
-        let missedList = $('#missed-list');
-        missedList.empty(); // Clear previous attempts
-
-        // Append new attempts to the list
-        missedAttempts.forEach(function (attempt) {
-            $('<li>').text(`Guess: ${attempt.guess}, Correct: ${attempt.correctCount}`).appendTo(missedList);
-        });
-    }
-
-    // Function to handle user input and update the page
-    function submitGuess() {
-        const guessInput = $('#guess').val().split(' ').map(Number);
-        console.log("HAHAHA!!!");
-        checkGuess(guessInput);
-    }
-
-    // Function to reveal one number as a hint
-    function revealHint() {
-        if (revealedCount < 4) {
-            alert('Hint: ' + secretCode[revealedCount]);
-            revealedCount++;
-
-            // Check if all numbers are revealed
-            if (revealedCount === 4) {
-                alert('All numbers revealed. Game reset!');
-                // Add code to reset the game
-                resetGame();
-            }
-        }
-    }
-
-    // Function to reset the game
-    function resetGame() {
-        revealedCount = 0;
-        missedAttempts = [];
-        $('#guess-list').empty();
-        $('#missed-list').empty();
-        // You may also reset other game-related variables or UI elements here
-    }
-
-    // Attach click event to the submit button
-    $('#submit-btn').click(submitGuess);
-
-    // Attach click event to the hint button
-    hintButton.click(revealHint);
-});
+function resetGame() {
+    player1Score = 0;
+    player2Score = 0;
+    player1Turn = true;
+    player1Choice = '';
+    player2Choice = '';
+    player1ScoreSpan.innerText = player1Score;
+    player2ScoreSpan.innerText = player2Score;
+    resultDiv.innerText = '';
+}

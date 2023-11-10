@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setupMultiplayer() {
         const numPlayers = prompt("Enter the number of players (2-4):");
-        if (numPlayers >= 2 && numPlayers <= 4) {
+        if (numPlayers == 2) {
             for (let i = 1; i <= numPlayers; i++) {
                 const input = document.createElement("input");
                 input.type = "text";
