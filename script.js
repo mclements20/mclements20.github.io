@@ -91,7 +91,7 @@ $(document).ready(function () {
     // Function to handle user input and update the page
     function submitGuess() {
         const guessInput = $('#guess').val().split(' ').map(Number);
-        console.log("HAHAHA!");
+        console.log("HAHAHA!!!");
         checkGuess(guessInput);
     }
 
