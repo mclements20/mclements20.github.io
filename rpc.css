@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    text-align: center;
+    margin: 0;
+}
+
+#game-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#mode-selector {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.choice {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#result, #multiplayer-result {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
