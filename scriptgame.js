@@ -1,105 +1,106 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const singlePlayerBtn = document.getElementById("single-player");
-    const multiplayerBtn = document.getElementById("multiplayer");
-    const singlePlayerGame = document.getElementById("single-player-game");
-    const multiplayerGame = document.getElementById("multiplayer-game");
-    const playerChoicesContainer = document.getElementById("player-choices");
-    const multiplayerSubmitBtn = document.getElementById("multiplayer-submit");
-    const resultMessageSinglePlayer = document.getElementById("result");
-    const resultMessageMultiplayer = document.getElementById("multiplayer-result");
+// script.js
+let player1Score = 0;
+let player2Score = 0;
+let isTwoPlayerMode = false;
+let player1Turn = true;
+let player1Choice = '';
+let player2Choice = '';
 
-    singlePlayerBtn.addEventListener("click", function () {
-        singlePlayerGame.classList.remove("hidden");
-        multiplayerGame.classList.add("hidden");
-        resetGame();
-        playSinglePlayer();
-    });
+const modeSelect = document.getElementById('mode-select');
+const player1ScoreSpan = document.getElementById('player1-score');
+const player2ScoreSpan = document.getElementById('player2-score');
+const resultDiv = document.getElementById('result');
+const choicesButtons = document.querySelectorAll('.choice');
 
-    multiplayerBtn.addEventListener("click", function () {
-        multiplayerGame.classList.remove("hidden");
-        singlePlayerGame.classList.add("hidden");
-        resetGame();
-        setupMultiplayer();
-    });
-
-    function resetGame() {
-        resultMessageSinglePlayer.textContent = "Result: ";
-        resultMessageSinglePlayer.classList.remove("winner", "loser");
-        resultMessageMultiplayer.textContent = "Result: ";
-        resultMessageMultiplayer.classList.remove("winner", "loser");
-        playerChoicesContainer.innerHTML = "";
-    }
-
-    function playSinglePlayer() {
-        const choices = ["rock", "paper", "scissors"];
-        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-        document.querySelectorAll(".choice").forEach(function (button) {
-            button.addEventListener("click", function () {
-                const userChoice = this.id;
-                const result = determineWinner(userChoice, computerChoice);
-                resultMessageSinglePlayer.textContent = `Result: ${result}`;
-                resultMessageSinglePlayer.classList.add(result === "You win!" ? "winner" : "loser");
-            });
-        });
-    }
-
-    function setupMultiplayer() {
-        const numPlayers = prompt("Enter the number of players (2-4):");
-        if (numPlayers == 2) {
-            for (let i = 1; i <= numPlayers; i++) {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.placeholder = `Player ${i} choice (rock/paper/scissors)`;
-                input.id = `player-${i}`;
-                playerChoicesContainer.appendChild(input);
-            }
-
-            multiplayerSubmitBtn.addEventListener("click", function () {
-                const choices = [];
-                for (let i = 1; i <= numPlayers; i++) {
-                    const playerChoice = document.getElementById(`player-${i}`).value.toLowerCase();
-                    choices.push(playerChoice);
-                }
-                const result = determineMultiplayerWinner(choices);
-                resultMessageMultiplayer.textContent = `Result: ${result}`;
-                resultMessageMultiplayer.classList.add(result.includes("wins") ? "winner" : "loser");
-            });
-        } else {
-            alert("Invalid number of players. Please enter a number between 2 and 4.");
-            resetGame();
-        }
-    }
-
-    function determineWinner(userChoice, computerChoice) {
-        if (userChoice === computerChoice) {
-            return "It's a tie!";
-        } else if (
-            (userChoice === "rock" && computerChoice === "scissors") ||
-            (userChoice === "paper" && computerChoice === "rock") ||
-            (userChoice === "scissors" && computerChoice === "paper")
-        ) {
-            return "You win!";
-        } else {
-            return "You lose!";
-        }
-    }
-
-    function determineMultiplayerWinner(choices) {
-        const uniqueChoices = new Set(choices);
-        if (uniqueChoices.size === 1) {
-            return "It's a tie!";
-        } else if (uniqueChoices.size === choices.length) {
-            // No duplicate choices
-            const winningCombinations = ["rockscissors", "scissorspaper", "paperrock"];
-            const combinedChoices = choices.join("");
-            if (winningCombinations.includes(combinedChoices)) {
-                return "Player 1 wins!";
-            } else {
-                return "No winner. Try again!";
-            }
-        } else {
-            return "Invalid choices. Each player must choose a unique option.";
-        }
-    }
+// event listener - pretty simple
+modeSelect.addEventListener('change', function() {
+    isTwoPlayerMode = this.value === 'multi';
+    resetGame();
 });
+
+// given the amount of players, play the game
+choicesButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        if (!isTwoPlayerMode) {
+            // Single player mode
+            playRound(this.id, getComputerChoice());
+        } else {
+            // Two player mode logic
+            if (player1Turn) {
+                player1Choice = this.id;
+                player1Turn = false;
+                resultDiv.innerText = 'Player 2: Make your choice';
+            } else {
+                player2Choice = this.id;
+                playRound(player1Choice, player2Choice);
+                player1Turn = true; // Reset for next round
+            }
+        }
+    });
+});
+
+document.getElementById('reset').addEventListener('click', resetGame);
+
+// given 1 player have the computer make a choice
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * 3)];
+}
+
+// play a round of rock-paper-scissors
+function playRound(player1Choice, player2Choice) {
+    const winner = getWinner(player1Choice, player2Choice);
+    updateScore(winner);
+    displayResult(player1Choice, player2Choice, winner);
+}
+
+// given the choices of uesers, calcculate the winner
+function getWinner(player1Choice, player2Choice) {
+    if (player1Choice === player2Choice) {
+        return 'draw';
+    }
+    // logic to calculate the winner
+    if ((player1Choice === 'rock' && player2Choice === 'scissors') ||
+        (player1Choice === 'scissors' && player2Choice === 'paper') ||
+        (player1Choice === 'paper' && player2Choice === 'rock')) {
+        return 'player1';
+    }
+    
+    return 'player2';
+}
+
+// update the score based on the result of the game
+function updateScore(winner) {
+    if (winner === 'player1') {
+        player1Score++;
+        player1ScoreSpan.innerText = player1Score;
+    } else if (winner === 'player2') {
+        player2Score++;
+        player2ScoreSpan.innerText = player2Score;
+    }
+    // No score update for a draw
+}
+
+// display the players choice and result to the user
+function displayResult(player1Choice, player2Choice, winner) {
+    let resultMessage;
+    if (winner === 'draw') {
+        resultMessage = `Both chose ${player1Choice}. It's a draw!`;
+    } else {
+        let winnerText = winner === 'player1' ? 'Player 1' : 'Player 2';
+        resultMessage = `Player 1 chose ${player1Choice}. Player 2 chose ${player2Choice}. ${winnerText} wins!`;
+    }
+    resultDiv.innerText = resultMessage;
+}
+
+// reset the game start back to beginning state
+function resetGame() {
+    player1Score = 0;
+    player2Score = 0;
+    player1Turn = true;
+    player1Choice = '';
+    player2Choice = '';
+    player1ScoreSpan.innerText = player1Score;
+    player2ScoreSpan.innerText = player2Score;
+    resultDiv.innerText = '';
+}
