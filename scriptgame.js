@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function resetGame() {
         resultMessageSinglePlayer.textContent = "Result: ";
+        resultMessageSinglePlayer.classList.remove("winner", "loser");
         resultMessageMultiplayer.textContent = "Result: ";
+        resultMessageMultiplayer.classList.remove("winner", "loser");
         playerChoicesContainer.innerHTML = "";
     }
 
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const userChoice = this.id;
                 const result = determineWinner(userChoice, computerChoice);
                 resultMessageSinglePlayer.textContent = `Result: ${result}`;
+                resultMessageSinglePlayer.classList.add(result === "You win!" ? "winner" : "loser");
             });
         });
     }
@@ -60,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 const result = determineMultiplayerWinner(choices);
                 resultMessageMultiplayer.textContent = `Result: ${result}`;
+                resultMessageMultiplayer.classList.add(result.includes("wins") ? "winner" : "loser");
             });
         } else {
             alert("Invalid number of players. Please enter a number between 2 and 4.");

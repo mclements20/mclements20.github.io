@@ -32,11 +32,25 @@ button {
 .choice {
     background-color: #3498db;
     color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.choice:hover {
+    background-color: #2980b9;
 }
 
 #result, #multiplayer-result {
     font-size: 1.2em;
     margin-top: 20px;
+    transition: color 0.5s ease-in-out;
+}
+
+#result.winner, #multiplayer-result.winner {
+    color: #27ae60; /* Green color for winner */
+}
+
+#result.loser, #multiplayer-result.loser {
+    color: #e74c3c; /* Red color for loser */
 }
 
 .hidden {
